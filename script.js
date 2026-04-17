@@ -10,63 +10,62 @@ const cursorDot = document.getElementById('cursorDot');
 let mouseX = 0, mouseY = 0;
 let curX   = 0, curY   = 0;
 
-document.addEventListener('mousemove', e => {
-  mouseX = e.clientX;
-  mouseY = e.clientY;
-  cursorDot.style.left = mouseX + 'px';
-  cursorDot.style.top  = mouseY + 'px';
-});
+// Only initialize custom cursor logic if elements exist (desktop safety)
+if (cursor && cursorDot) {
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top  = mouseY + 'px';
+  });
 
-function animateCursor() {
-  curX += (mouseX - curX) * 0.12;
-  curY += (mouseY - curY) * 0.12;
-  cursor.style.left = curX + 'px';
-  cursor.style.top  = curY + 'px';
-  requestAnimationFrame(animateCursor);
+  function animateCursor() {
+    curX += (mouseX - curX) * 0.12;
+    curY += (mouseY - curY) * 0.12;
+    cursor.style.left = curX + 'px';
+    cursor.style.top  = curY + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  /* Cursor interaction on hover */
+  document.querySelectorAll('a, button, .photo-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
+      cursor.style.borderColor = 'rgba(201,168,76,0.6)';
+    });
+    el.addEventListener('mouseleave', () => {
+      cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      cursor.style.borderColor = '#c9a84c';
+    });
+  });
 }
-animateCursor();
-
-/* Cursor grow on links / buttons */
-document.querySelectorAll('a, button, .photo-card').forEach(el => {
-  el.addEventListener('mouseenter', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1.8)';
-    cursor.style.borderColor = 'rgba(201,168,76,0.6)';
-  });
-  el.addEventListener('mouseleave', () => {
-    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-    cursor.style.borderColor = 'var(--gold)';
-  });
-});
-
 
 /* ── STICKY NAVBAR ── */
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 60) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
+  if (navbar) {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
   }
 });
-
 
 /* ── HAMBURGER MENU ── */
 const hamburger = document.getElementById('hamburger');
 const navLinks  = document.getElementById('navLinks');
 
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('open');
-  navLinks.classList.toggle('open');
-});
-
-/* Close menu on link click */
-document.querySelectorAll('.nav-item').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('open');
-    navLinks.classList.remove('open');
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    navLinks.classList.toggle('open');
   });
-});
 
+  document.querySelectorAll('.nav-item').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      navLinks.classList.remove('open');
+    });
+  });
+}
 
 /* ── GALLERY FILTER ── */
 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -80,45 +79,55 @@ filterBtns.forEach(btn => {
     const filter = btn.dataset.filter;
     photoCards.forEach(card => {
       if (filter === 'all' || card.dataset.cat === filter) {
-        card.classList.remove('hidden');
+        card.style.display = 'block'; // Using display for cleaner filtering
       } else {
-        card.classList.add('hidden');
+        card.style.display = 'none';
       }
     });
   });
 });
 
-
 /* ── SCROLL REVEAL ── */
 const revealEls = document.querySelectorAll(
-  '.section-header, .photo-card, .about-img-wrap, .about-text, .contact-grid, .testimonial-inner, .hero-counter'
+  '.section-header, .photo-card, .about-img-wrap, .about-text, .contact-grid, .testimonial-inner'
 );
 
-revealEls.forEach(el => el.classList.add('reveal'));
+// Only run observer if there are elements to reveal
+if (revealEls.length > 0) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
+  revealEls.forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
   });
-}, { threshold: 0.12 });
+}
 
-revealEls.forEach(el => observer.observe(el));
+/* ── CONTACT FORM HANDLING ── */
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    
+    btn.textContent = '✓ Message Sent!';
+    btn.style.background = '#4caf50'; // Success Green
+    btn.style.color = '#fff';
+    btn.disabled = true;
 
-
-/* ── CONTACT FORM ── */
-function handleForm(e) {
-  e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  btn.textContent = '✓ Message Sent!';
-  btn.style.background = '#4caf6c';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.background = '';
-    btn.disabled = false;
-    e.target.reset();
-  }, 3000);
+    setTimeout(() => {
+      btn.textContent = originalText;
+      btn.style.background = '';
+      btn.style.color = '';
+      btn.disabled = false;
+      this.reset();
+    }, 3000);
+  });
 }

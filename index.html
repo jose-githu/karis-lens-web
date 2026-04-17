@@ -5,15 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Karis Lens | Professional Photography</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
 
-  <!-- ── CURSOR ── -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
-  <!-- ── NAVBAR ── -->
   <nav class="navbar" id="navbar">
     <div class="logo">
       <span class="logo-mark">K</span>ARIS LENS
@@ -22,18 +20,17 @@
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-item" data-index="01">Home</a></li>
-      <li><a href="#gallery" class="nav-item" data-index="02">Gallery</a></li>
-      <li><a href="#about" class="nav-item" data-index="03">About</a></li>
-      <li><a href="#contact" class="nav-item" data-index="04">Contact</a></li>
+      <li><a href="#home" class="nav-item">Home</a></li>
+      <li><a href="#gallery" class="nav-item">Gallery</a></li>
+      <li><a href="#about" class="nav-item">About</a></li>
+      <li><a href="#contact" class="nav-item">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Book a Session</a>
+    <a href="https://wa.me/254700000000" class="nav-cta">Book Now</a>
   </nav>
 
-  <!-- ── HERO ── -->
   <header id="home" class="hero">
     <div class="hero-bg">
-      <img src="gallery/photo1.jpg" alt="Hero" class="hero-img" />
+      <img src="karis-lens.jpg" alt="Hero" class="hero-img" />
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -45,135 +42,57 @@
       <p class="hero-sub">Weddings. Portraits. Events. Every frame tells a story.</p>
       <div class="hero-actions">
         <a href="#gallery" class="btn btn-primary">View My Work</a>
-        <a href="#about" class="btn btn-ghost">Meet the Lensman</a>
+        <a href="https://wa.me/254700000000" class="btn btn-ghost">WhatsApp Me</a>
       </div>
     </div>
     <div class="hero-scroll">
       <span>Scroll</span>
       <div class="scroll-line"></div>
     </div>
-    <div class="hero-counter">
-      <div class="counter-item"><span class="counter-num">200+</span><span class="counter-label">Sessions</span></div>
-      <div class="counter-item"><span class="counter-num">98%</span><span class="counter-label">Satisfaction</span></div>
-      <div class="counter-item"><span class="counter-num">5★</span><span class="counter-label">Rated</span></div>
-    </div>
   </header>
 
-  <!-- ── GALLERY ── -->
   <section id="gallery" class="section gallery-section">
     <div class="section-header">
       <span class="section-tag">Portfolio</span>
       <h2 class="section-title">Client Gallery</h2>
-      <p class="section-desc">A curated selection of work across weddings, portraits, and events.</p>
-    </div>
-
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="wedding">Weddings</button>
-      <button class="filter-btn" data-filter="portrait">Portraits</button>
-      <button class="filter-btn" data-filter="event">Events</button>
     </div>
 
     <div class="gallery-grid">
-      <div class="photo-card tall" data-cat="wedding">
-        <img src="gallery/photo1.jpg" alt="Wedding 1" />
+      <div class="photo-card tall">
+        <img src="gallery/FB_IMG_1776414221933.jpg" alt="Wedding">
         <div class="card-overlay">
           <span class="card-cat">Wedding</span>
-          <p class="card-title">Golden Hour Vows</p>
+          <p class="card-title">Golden Hour</p>
         </div>
       </div>
-      <div class="photo-card" data-cat="portrait">
-        <img src="gallery/photo2.jpg" alt="Portrait 1" />
+      <div class="photo-card">
+        <img src="gallery/FB_IMG_1776414225303.jpg" alt="Portrait">
         <div class="card-overlay">
           <span class="card-cat">Portrait</span>
-          <p class="card-title">Natural Light Series</p>
+          <p class="card-title">Natural Light</p>
         </div>
       </div>
-      <div class="photo-card" data-cat="event">
-        <img src="gallery/photo3.jpg" alt="Event 1" />
+      <div class="photo-card">
+        <img src="gallery/FB_IMG_1776450832471.jpg" alt="Event">
         <div class="card-overlay">
           <span class="card-cat">Event</span>
-          <p class="card-title">Cultural Celebration</p>
+          <p class="card-title">Celebration</p>
         </div>
       </div>
-      <div class="photo-card wide" data-cat="wedding">
-        <img src="gallery/photo4.jpg" alt="Wedding 2" />
+      <div class="photo-card wide">
+        <img src="gallery/FB_IMG_1776450884333.jpg" alt="Wedding">
         <div class="card-overlay">
           <span class="card-cat">Wedding</span>
-          <p class="card-title">Ceremony &amp; Reception</p>
-        </div>
-      </div>
-      <div class="photo-card" data-cat="portrait">
-        <img src="gallery/photo5.jpg" alt="Portrait 2" />
-        <div class="card-overlay">
-          <span class="card-cat">Portrait</span>
-          <p class="card-title">Executive Headshot</p>
-        </div>
-      </div>
-      <div class="photo-card" data-cat="event">
-        <img src="gallery/photo6.jpg" alt="Event 2" />
-        <div class="card-overlay">
-          <span class="card-cat">Event</span>
-          <p class="card-title">Community Showcase</p>
+          <p class="card-title">The Ceremony</p>
         </div>
       </div>
     </div>
-
-    <div class="gallery-cta">
-      <a href="#contact" class="btn btn-primary">Request Full Portfolio</a>
-    </div>
   </section>
 
-  <!-- ── ABOUT ── -->
-  <section id="about" class="section about-section">
-    <div class="about-img-wrap">
-      <img src="karis-lens.jpg" alt="Karis Lens" class="about-img" />
-      <div class="about-img-accent"></div>
-      <div class="about-badge">
-        <span>📷</span>
-        <p>Kimana Town, Kenya</p>
-      </div>
-    </div>
-    <div class="about-text">
-      <span class="section-tag">About</span>
-      <h2 class="section-title left">Meet the Lensman</h2>
-      <p class="about-body">
-        Rooted in the heart of the community, Karis Lens brings a raw,
-        authentic perspective to every frame. Photography here is not just
-        a service — it is storytelling woven into light and shadow.
-      </p>
-      <p class="about-body">
-        From the warmth of golden-hour weddings to the quiet depth of portrait
-        sessions, every image is crafted with intention, patience, and an eye
-        for the extraordinary hidden in the everyday.
-      </p>
-      <div class="about-tags">
-        <span class="tag">Weddings</span>
-        <span class="tag">Portraits</span>
-        <span class="tag">Events</span>
-        <span class="tag">Commercial</span>
-      </div>
-      <a href="#contact" class="btn btn-primary">Work Together</a>
-    </div>
-  </section>
-
-  <!-- ── TESTIMONIAL ── -->
-  <section class="testimonial-section">
-    <div class="testimonial-inner">
-      <p class="testimonial-quote">
-        "Karis captured moments I didn't even know were happening.
-        The photos from our wedding day are absolutely breathtaking."
-      </p>
-      <p class="testimonial-author">— Amara &amp; James, Wedding Clients</p>
-    </div>
-  </section>
-
-  <!-- ── CONTACT ── -->
   <section id="contact" class="section contact-section">
     <div class="section-header">
       <span class="section-tag">Contact</span>
       <h2 class="section-title">Book a Session</h2>
-      <p class="section-desc">Ready to create something beautiful? Let's connect.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info">
@@ -181,61 +100,26 @@
           <span class="contact-icon">📍</span>
           <div>
             <p class="contact-label">Location</p>
-            <p class="contact-val">Kimana Town, Kajiado, Kenya</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">📱</span>
-          <div>
-            <p class="contact-label">WhatsApp / Call</p>
-            <p class="contact-val">+254 700 000 000</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <span class="contact-icon">✉️</span>
-          <div>
-            <p class="contact-label">Email</p>
-            <p class="contact-val">karislens@gmail.com</p>
+            <p class="contact-val">Kimana Town, Kenya</p>
           </div>
         </div>
         <div class="social-row">
           <a href="#" class="social-link">Instagram</a>
-          <a href="#" class="social-link">TikTok</a>
-          <a href="#" class="social-link">Facebook</a>
+          <a href="https://wa.me/254700000000" class="social-link">WhatsApp</a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleForm(event)">
-        <div class="form-group">
-          <input type="text" placeholder="Your Name" required />
-        </div>
-        <div class="form-group">
-          <input type="email" placeholder="Email Address" required />
-        </div>
-        <div class="form-group">
-          <select>
-            <option value="" disabled selected>Type of Session</option>
-            <option>Wedding Photography</option>
-            <option>Portrait Session</option>
-            <option>Event Coverage</option>
-            <option>Commercial / Other</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <textarea placeholder="Tell me about your vision..." rows="4"></textarea>
-        </div>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <textarea placeholder="Tell me about your vision..." rows="4"></textarea>
         <button type="submit" class="btn btn-primary full-width">Send Message</button>
       </form>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="footer-inner">
-      <div class="logo footer-logo">
-        <span class="logo-mark">K</span>ARIS LENS
-      </div>
-      <p class="footer-copy">&copy; 2026 Karis Lens Photography. All rights reserved.</p>
-      <p class="footer-tagline">Kimana Town · Kajiado · Kenya</p>
+      <p class="footer-copy">&copy; 2026 Karis Lens Photography.</p>
     </div>
   </footer>
 

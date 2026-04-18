@@ -3,123 +3,401 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Karis Lens | Professional Photography</title>
+  <title>Karis Lens | Professional Photography · Kimana Town</title>
+  <meta name="description" content="Karis Lens — Professional photography services in Kimana Town, Kenya. Weddings, Portraits, Events & Commercial. Powered by Kimana Chronicles." />
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
+  <!-- Custom Cursor -->
   <div class="cursor" id="cursor"></div>
   <div class="cursor-dot" id="cursorDot"></div>
 
+  <!-- ════════════════════════════════
+       NAVBAR
+  ════════════════════════════════ -->
   <nav class="navbar" id="navbar">
     <div class="logo">
-      <span class="logo-mark">K</span>ARIS LENS
+      <span class="logo-mark">K</span><span class="logo-text">ARIS LENS</span>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-item">Home</a></li>
-      <li><a href="#gallery" class="nav-item">Gallery</a></li>
-      <li><a href="#about" class="nav-item">About</a></li>
-      <li><a href="#contact" class="nav-item">Contact</a></li>
+      <li><a href="#fold-1" class="nav-item">Standard</a></li>
+      <li><a href="#fold-2" class="nav-item">Library</a></li>
+      <li><a href="#fold-3" class="nav-item">Contact</a></li>
     </ul>
-    <a href="https://wa.me/254700000000" class="nav-cta">Book Now</a>
+    <div class="nav-right">
+      <a href="https://wa.me/254700000000" class="nav-cta" target="_blank" rel="noopener">
+        <span class="cta-dot"></span>Book Session
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span>
+      </button>
+    </div>
   </nav>
 
-  <header id="home" class="hero">
-    <div class="hero-bg">
-      <img src="karis-lens.jpg" alt="Hero" class="hero-img" />
-      <div class="hero-overlay"></div>
-    </div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Est. Kimana Town · 2024</p>
-      <h1 class="hero-headline">
-        <span class="line">Capturing the</span>
-        <span class="line italic">Unseen</span>
-      </h1>
-      <p class="hero-sub">Weddings. Portraits. Events. Every frame tells a story.</p>
-      <div class="hero-actions">
-        <a href="#gallery" class="btn btn-primary">View My Work</a>
-        <a href="https://wa.me/254700000000" class="btn btn-ghost">WhatsApp Me</a>
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Scroll</span>
-      <div class="scroll-line"></div>
-    </div>
-  </header>
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <ul>
+      <li><a href="#fold-1" class="drawer-link">The Standard</a></li>
+      <li><a href="#fold-2" class="drawer-link">The Library</a></li>
+      <li><a href="#fold-3" class="drawer-link">Connect</a></li>
+      <li><a href="https://wa.me/254700000000" class="drawer-link gold" target="_blank" rel="noopener">WhatsApp ↗</a></li>
+    </ul>
+  </div>
 
-  <section id="gallery" class="section gallery-section">
-    <div class="section-header">
-      <span class="section-tag">Portfolio</span>
-      <h2 class="section-title">Client Gallery</h2>
+  <!-- ════════════════════════════════
+       FOLD 1 · THE KARIS STANDARD
+       Professional Authority
+  ════════════════════════════════ -->
+  <section id="fold-1" class="fold fold-1">
+
+    <!-- Hero Visual -->
+    <div class="hero-stage">
+      <div class="hero-bg-wrap">
+        <img src="karis-lens.jpg" alt="Karis Lens Hero" class="hero-bg-img" id="parallaxHero" />
+        <div class="hero-vignette"></div>
+        <div class="hero-grain"></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-top-line">
+          <span class="badge">Est. Kimana Town · 2024</span>
+          <span class="badge">Sony α7 IV · Canon R5</span>
+        </div>
+        <h1 class="hero-headline">
+          <span class="line-1">The Art of</span>
+          <span class="line-2 italic">Seeing</span>
+        </h1>
+        <p class="hero-sub">Where documentary instinct meets cinematic precision. <br/>Every frame is a decision — never an accident.</p>
+        <div class="hero-actions">
+          <a href="#fold-2" class="btn btn-gold">Explore the Work</a>
+          <a href="https://wa.me/254700000000" class="btn btn-outline" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.563 4.14 1.543 5.874L.057 23.5l5.773-1.486A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.892 0-3.658-.523-5.17-1.43L2.5 21.5l.957-4.189A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-scroll-indicator">
+        <div class="scroll-bar"></div>
+        <span>Scroll</span>
+      </div>
+
+      <!-- Floating stat cards -->
+      <div class="stat-float stat-float--1 reveal-fade">
+        <span class="stat-num">200+</span>
+        <span class="stat-label">Sessions Delivered</span>
+      </div>
+      <div class="stat-float stat-float--2 reveal-fade">
+        <span class="stat-num">4K</span>
+        <span class="stat-label">RAW Editing</span>
+      </div>
     </div>
 
-    <div class="gallery-grid">
-      <div class="photo-card tall">
-        <img src="gallery/FB_IMG_1776414221933.jpg" alt="Wedding">
-        <div class="card-overlay">
-          <span class="card-cat">Wedding</span>
-          <p class="card-title">Golden Hour</p>
-        </div>
+    <!-- The Karis Standard Section -->
+    <div class="standard-block">
+      <div class="standard-label reveal-up">
+        <span class="section-eyebrow">The Karis Standard</span>
       </div>
-      <div class="photo-card">
-        <img src="gallery/FB_IMG_1776414225303.jpg" alt="Portrait">
-        <div class="card-overlay">
-          <span class="card-cat">Portrait</span>
-          <p class="card-title">Natural Light</p>
+
+      <div class="standard-grid">
+        <div class="standard-pillar reveal-up" style="--delay:0s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <h3>Technical Precision</h3>
+          <p>Sony α7 IV & Canon EOS R5 systems. Dual-camera coverage for critical moments. Zero missed shots on wedding days — guaranteed.</p>
         </div>
-      </div>
-      <div class="photo-card">
-        <img src="gallery/FB_IMG_1776450832471.jpg" alt="Event">
-        <div class="card-overlay">
-          <span class="card-cat">Event</span>
-          <p class="card-title">Celebration</p>
+        <div class="standard-pillar reveal-up" style="--delay:0.1s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Reliable Delivery</h3>
+          <p>Edited galleries delivered within 7 days. Private online galleries hosted for 90 days. Every file exported in full resolution — no compression.</p>
         </div>
-      </div>
-      <div class="photo-card wide">
-        <img src="gallery/FB_IMG_1776450884333.jpg" alt="Wedding">
-        <div class="card-overlay">
-          <span class="card-cat">Wedding</span>
-          <p class="card-title">The Ceremony</p>
+        <div class="standard-pillar reveal-up" style="--delay:0.2s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 6s4-2 11-2 11 2 11 2v3s-4 2-11 2S1 9 1 9V6z"/><path d="M1 12s4-2 11-2 11 2 11 2v3s-4 2-11 2S1 15 1 15v-3z"/><path d="M1 18s4-2 11-2 11 2 11 2v3s-4 2-11 2S1 21 1 21v-3z"/></svg>
+          </div>
+          <h3>Professional Workflow</h3>
+          <p>Adobe Lightroom & Premiere Pro post-production. Colour-graded to match your brand palette. Video highlights available for events.</p>
+        </div>
+        <div class="standard-pillar reveal-up" style="--delay:0.3s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Kimana-Based, Kenya-Wide</h3>
+          <p>Headquartered in Kimana Town. Covering Amboseli, Namanga, Oloitokitok, Kajiado County — and beyond on request.</p>
         </div>
       </div>
     </div>
+
+    <!-- Services Strip -->
+    <div class="services-strip">
+      <div class="services-inner">
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Wedding Photography</div>
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Portrait Sessions</div>
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Corporate Events</div>
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Cultural & Community</div>
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Product Photography</div>
+        <div class="service-tag reveal-fade"><span class="tag-dot"></span>Video Highlights</div>
+      </div>
+    </div>
+
   </section>
 
-  <section id="contact" class="section contact-section">
-    <div class="section-header">
-      <span class="section-tag">Contact</span>
-      <h2 class="section-title">Book a Session</h2>
+  <!-- ════════════════════════════════
+       FOLD 2 · THE GATEWAY & LIBRARY
+       Kimana Chronicles Integration
+  ════════════════════════════════ -->
+  <section id="fold-2" class="fold fold-2">
+
+    <div class="fold2-header reveal-up">
+      <span class="section-eyebrow">Portfolio & Library</span>
+      <h2 class="section-title">The <em>Visual</em> Archive</h2>
+      <p class="section-sub">A curated selection — the full vault lives on <strong>Kimana Chronicles</strong>.</p>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <div class="contact-item">
-          <span class="contact-icon">📍</span>
-          <div>
-            <p class="contact-label">Location</p>
-            <p class="contact-val">Kimana Town, Kenya</p>
+
+    <!-- Category Shortcuts -->
+    <div class="cat-nav reveal-up">
+      <button class="cat-btn active" data-filter="all">All Work</button>
+      <button class="cat-btn" data-filter="wedding">Weddings</button>
+      <button class="cat-btn" data-filter="portrait">Portraits</button>
+      <button class="cat-btn" data-filter="event">Events</button>
+      <button class="cat-btn" data-filter="community">Community</button>
+    </div>
+
+    <!-- Masonry-style Gallery Grid -->
+    <div class="gallery-grid" id="galleryGrid">
+
+      <div class="photo-card tall" data-cat="wedding">
+        <img src="gallery/FB_IMG_1776414221933.jpg" alt="Wedding photography Kimana" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-cat-badge">Wedding</span>
+          <div class="card-info">
+            <p class="card-title">Golden Hour Ceremony</p>
+            <p class="card-meta">Kimana Town · 2024</p>
           </div>
         </div>
-        <div class="social-row">
-          <a href="#" class="social-link">Instagram</a>
-          <a href="https://wa.me/254700000000" class="social-link">WhatsApp</a>
+      </div>
+
+      <div class="photo-card" data-cat="portrait">
+        <img src="gallery/FB_IMG_1776414225303.jpg" alt="Portrait photography" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-cat-badge">Portrait</span>
+          <div class="card-info">
+            <p class="card-title">Natural Light Session</p>
+            <p class="card-meta">Studio · 2024</p>
+          </div>
         </div>
       </div>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <textarea placeholder="Tell me about your vision..." rows="4"></textarea>
-        <button type="submit" class="btn btn-primary full-width">Send Message</button>
-      </form>
+
+      <div class="photo-card" data-cat="event">
+        <img src="gallery/FB_IMG_1776450832471.jpg" alt="Event photography" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-cat-badge">Event</span>
+          <div class="card-info">
+            <p class="card-title">Community Celebration</p>
+            <p class="card-meta">Oloitokitok · 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card wide" data-cat="wedding">
+        <img src="gallery/FB_IMG_1776450884333.jpg" alt="Wedding ceremony" loading="lazy" />
+        <div class="card-overlay">
+          <span class="card-cat-badge">Wedding</span>
+          <div class="card-info">
+            <p class="card-title">The First Dance</p>
+            <p class="card-meta">Amboseli Region · 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder cards for visual richness when images are missing -->
+      <div class="photo-card" data-cat="community">
+        <div class="placeholder-card">
+          <span class="ph-icon">🌄</span>
+          <p>Kimana Town Life</p>
+          <span class="ph-sub">Community · 2024</span>
+        </div>
+        <div class="card-overlay">
+          <span class="card-cat-badge">Community</span>
+          <div class="card-info">
+            <p class="card-title">Kimana Town Life</p>
+            <p class="card-meta">Documentary · 2024</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="photo-card tall" data-cat="portrait">
+        <div class="placeholder-card dark">
+          <span class="ph-icon">🎭</span>
+          <p>Maasai Portrait Series</p>
+          <span class="ph-sub">Portrait · 2024</span>
+        </div>
+        <div class="card-overlay">
+          <span class="card-cat-badge">Portrait</span>
+          <div class="card-info">
+            <p class="card-title">Maasai Portrait Series</p>
+            <p class="card-meta">Cultural · 2024</p>
+          </div>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Chronicles Bridge -->
+    <div class="chronicles-bridge reveal-up">
+      <div class="bridge-inner">
+        <div class="bridge-text">
+          <span class="section-eyebrow">Powered by Kimana Chronicles</span>
+          <h3>The Full Vault Awaits</h3>
+          <p>Hundreds of sessions, community moments, local events, and documentary work — all organized and searchable in the Kimana Chronicles digital platform.</p>
+          <div class="bridge-cats">
+            <span>Weddings</span>
+            <span>Portraits</span>
+            <span>Local News</span>
+            <span>Events</span>
+            <span>Documentary</span>
+          </div>
+        </div>
+        <div class="bridge-action">
+          <a href="#" class="btn btn-gold-outline">Visit Kimana Chronicles ↗</a>
+          <p class="bridge-note">The community digital platform for Kimana Town</p>
+        </div>
+      </div>
+    </div>
+
   </section>
 
+  <!-- ════════════════════════════════
+       FOLD 3 · INTERACTION HUB
+       Contact + Social + Location
+  ════════════════════════════════ -->
+  <section id="fold-3" class="fold fold-3">
+
+    <div class="fold3-inner">
+
+      <!-- Left: Contact Info -->
+      <div class="contact-panel reveal-up">
+        <span class="section-eyebrow">Let's Create Together</span>
+        <h2 class="contact-heading">Book a <em>Session</em></h2>
+
+        <p class="contact-pitch">Whether it's the biggest day of your life or a corporate campaign — bring your vision, I'll deliver the frame.</p>
+
+        <!-- Direct Channels -->
+        <div class="channel-list">
+          <a href="https://wa.me/254700000000" class="channel-item channel-wa" target="_blank" rel="noopener">
+            <div class="channel-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.136.563 4.14 1.543 5.874L.057 23.5l5.773-1.486A11.946 11.946 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.892 0-3.658-.523-5.17-1.43L2.5 21.5l.957-4.189A9.958 9.958 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">WhatsApp</span>
+              <span class="channel-val">+254 700 000 000</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+
+          <a href="https://facebook.com" class="channel-item channel-fb" target="_blank" rel="noopener">
+            <div class="channel-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">Facebook</span>
+              <span class="channel-val">Karis Lens Photography</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+
+          <a href="https://instagram.com" class="channel-item channel-ig" target="_blank" rel="noopener">
+            <div class="channel-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </div>
+            <div class="channel-info">
+              <span class="channel-name">Instagram</span>
+              <span class="channel-val">@karislens</span>
+            </div>
+            <span class="channel-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Location Block -->
+        <div class="location-block">
+          <div class="location-pin">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <p class="loc-name">Kimana Town, Kajiado County</p>
+            <p class="loc-sub">Oloitokitok Sub-County · Kenya</p>
+            <p class="loc-reach">Available for travel: Amboseli · Namanga · Nairobi</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="form-panel reveal-up" style="--delay:0.15s">
+        <form class="contact-form" id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Name</label>
+              <input type="text" id="fname" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label for="fphone">Phone / WhatsApp</label>
+              <input type="tel" id="fphone" placeholder="+254 7XX XXX XXX" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="femail">Email</label>
+            <input type="email" id="femail" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="ftype">Session Type</label>
+            <select id="ftype">
+              <option value="">Select session type…</option>
+              <option>Wedding Photography</option>
+              <option>Portrait Session</option>
+              <option>Corporate / Commercial</option>
+              <option>Community / Cultural Event</option>
+              <option>Video Coverage</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Your Vision</label>
+            <textarea id="fmsg" rows="4" placeholder="Tell me about the session — date, location, vibe, anything that matters to you…"></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold full-width" id="submitBtn">
+            Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ════════════════════════════════
+       FOOTER
+  ════════════════════════════════ -->
   <footer class="footer">
     <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Karis Lens Photography.</p>
+      <div class="footer-brand">
+        <span class="logo-mark">K</span><span class="logo-text">ARIS LENS</span>
+        <p>Professional Photography · Kimana Town, Kenya</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">Kimana Chronicles</a>
+      </div>
+      <div class="footer-credit">
+        <p>&copy; 2026 Karis Lens Photography · All rights reserved.</p>
+        <p class="dev-credit">Designed & Engineered by <strong>Joseph Kitonga</strong> · <a href="https://github.com/jose-githu/QUICKSHELF.COM" target="_blank" rel="noopener">Quickshelf Digital</a></p>
+      </div>
     </div>
   </footer>
 

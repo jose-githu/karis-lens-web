@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════════════
    KARIS LENS · script.js
    Three-Fold Architecture · Full Interaction Logic
-   Author: Joseph Kitonga · Quickshelf Digital
+   Author: Flynn Technologies
+   Contact: +254 794 891 348
 ═══════════════════════════════════════════════ */
 
 /* ── CUSTOM CURSOR (desktop only) ── */
@@ -86,7 +87,6 @@ if (heroBgImg) {
 
   window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
-    // Subtle parallax
     heroBgImg.style.transform = `scale(1) translateY(${scrolled * 0.25}px)`;
   }, { passive: true });
 }
@@ -110,7 +110,6 @@ catBtns.forEach(btn => {
         card.style.display = '';
         card.style.opacity = '0';
         card.style.transform = 'translateY(16px)';
-        // Stagger fade-in
         const idx = [...photoCards].indexOf(card);
         setTimeout(() => {
           card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
@@ -142,9 +141,11 @@ if (revealEls.length > 0) {
   revealEls.forEach(el => observer.observe(el));
 }
 
-/* ── CONTACT FORM ── */
+/* ── CONTACT FORM — Live WhatsApp to +254794891348 ── */
 const contactForm = document.getElementById('contactForm');
 const submitBtn   = document.getElementById('submitBtn');
+
+const KARIS_WA_NUMBER = '254794891348';
 
 if (contactForm && submitBtn) {
   contactForm.addEventListener('submit', function(e) {
@@ -157,7 +158,6 @@ if (contactForm && submitBtn) {
     submitBtn.style.opacity = '0.7';
     submitBtn.disabled = true;
 
-    // Simulate send delay (replace with real fetch/API call)
     setTimeout(() => {
       submitBtn.textContent = '✓ Message Received!';
       submitBtn.style.opacity = '1';
@@ -173,11 +173,11 @@ if (contactForm && submitBtn) {
       const message = document.getElementById('fmsg')?.value  || '';
 
       const waText = encodeURIComponent(
-        `Hello Karis Lens!\n\n*Name:* ${name}\n*Session:* ${type}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}`
+        `Hello Karis Lens! 📸\n\n*Name:* ${name}\n*Session:* ${type}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}\n\n_Sent via karislens.co.ke_`
       );
 
-      // Open WhatsApp with pre-filled message
-      const waLink = `https://wa.me/254700000000?text=${waText}`;
+      // Open WhatsApp with pre-filled message directed to live number
+      const waLink = `https://wa.me/${KARIS_WA_NUMBER}?text=${waText}`;
       window.open(waLink, '_blank', 'noopener,noreferrer');
 
       // Reset after delay
@@ -192,6 +192,23 @@ if (contactForm && submitBtn) {
 
     }, 1200);
   });
+}
+
+/* ── FLOATING WHATSAPP FAB — pulse & visibility ── */
+const fab = document.querySelector('.whatsapp-fab');
+
+if (fab) {
+  // Show FAB after scrolling past the hero
+  const heroStage = document.querySelector('.hero-stage');
+
+  function updateFabVisibility() {
+    if (!heroStage) { fab.classList.add('fab-visible'); return; }
+    const heroBottom = heroStage.getBoundingClientRect().bottom;
+    fab.classList.toggle('fab-visible', heroBottom < 0);
+  }
+
+  window.addEventListener('scroll', updateFabVisibility, { passive: true });
+  updateFabVisibility();
 }
 
 /* ── SMOOTH NAV SCROLL (offset for fixed navbar) ── */
